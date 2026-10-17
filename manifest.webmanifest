@@ -1,11 +1,15 @@
 {
+  "id": "./index.html",
   "name": "Magno Space",
   "short_name": "Magno",
-  "description": "App pessoal para tarefas, streak, treinos, notas, hidratacao e progresso diario.",
+  "description": "Painel pessoal de disciplina: tarefas, streak, treinos, notas, hidratação e progresso diário.",
+  "lang": "pt-BR",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0b0b0f",
-  "theme_color": "#0b0b0f",
+  "orientation": "portrait",
+  "background_color": "#09090c",
+  "theme_color": "#09090c",
   "icons": [
     {
       "src": "./src/assets/icon.svg",

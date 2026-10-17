@@ -1,6 +1,6 @@
 # Magno Space
 
-Magno Space e um app pessoal mobile-first para acompanhar tarefas, streak, frases diarias, hidratacao, habitos, treinos, notas e calendario de vitorias.
+App pessoal, feito primeiro para o celular, para acompanhar a jornada diária: frase de reprogramação mental, checklist "Vá e vença" com streak, alertas do dia editáveis, hidratação, treinos com evolução de cargas, notas e calendário de vitórias.
 
 ## Como rodar
 
@@ -10,24 +10,29 @@ npm start
 
 Abra `http://localhost:4173`.
 
-## Testes
+## Testes e build
 
 ```bash
-npm test
+npm test          # regras de negócio (datas, streak, Ouroboros, backup, treinos...)
+npm run build     # site estático em dist/
 ```
 
-## Build
+## Navegação
 
-```bash
-npm run build
-```
+As seções ficam em abas no topo (Hoje, Treinos, Notas, Calendário, Ajustes). Deslize a tela para o lado ou toque na aba.
 
-O build estatico sera criado em `dist/`.
+## Trocar a logo
+
+Substitua o arquivo `src/assets/logo.svg` (ou aponte o `<img class="brand-logo">` do `index.html` para um PNG). O ícone do app instalado fica em `src/assets/icon.svg`.
+
+## Frases
+
+A biblioteca está em `src/quotes.js`. Para acrescentar, adicione linhas **no final** da lista (nunca reordene). Itens marcados "atribuída" são frases muito difundidas sem fonte primária confirmada.
 
 ## Dados e backup
 
-Os dados ficam salvos no navegador, usando IndexedDB com fallback em localStorage. Use a tela `Ajustes` para exportar um backup JSON antes de trocar de aparelho, limpar dados do navegador ou publicar uma nova versao.
+Os dados ficam somente no aparelho (IndexedDB, com reserva em localStorage). Use **Ajustes → Exportar backup** antes de trocar de celular ou limpar os dados do navegador. A importação valida e limpa tudo o que entra.
 
 ## Uso no celular
 
-Rode o servidor local e acesse pelo navegador do celular na mesma rede usando o IP do computador e a porta `4173`. Para instalacao como PWA, acesse via `http://localhost` ou deploy HTTPS; navegadores geralmente nao permitem service worker em arquivo local.
+Para instalar como app (PWA), publique em HTTPS (o deploy do GitHub Pages já está configurado) e use "Adicionar à tela inicial". Em rede local, acesse `http://IP-do-computador:4173`.
